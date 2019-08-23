@@ -2,7 +2,7 @@ import requests, json, sys
 from requests.auth import HTTPBasicAuth
 
 url = 'http://localhost:3420/v2/owner'
-api_sercet = '/Users/yuanjieyang/.grin/main/.api_secret'
+api_sercet = '<your api_sercet file location>'
 tx_id = sys.argv[1]
 
 headers = {
@@ -16,4 +16,7 @@ payload = {
     'params': [True, None, tx_id],
 }
 client = requests.post(url, data=json.dumps(payload), headers=headers, auth=auth)
-print(client.text)
+result = client.json()
+print(result)
+print(result['result']['Ok'][1][0]['id'])
+print(result['result']['Ok'][1][0]['confirmed'])
