@@ -13,8 +13,8 @@ def index(uid):
     url = 'http://127.0.0.1:3415/v2/foreign'
     resp = requests.post(url, headers=request.headers, data=request.data)
     if request.json.get('method') == 'receive_tx':
-        print(resp.json)
-        slate = resp.json
+        print(resp.json())
+        slate = resp.json()
         #uxtos (inputs/outpus) for this tx
         inputs = slate['result']['Ok']['tx']['body']['inputs']
         outputs = slate['result']['Ok']['tx']['body']['outputs']
