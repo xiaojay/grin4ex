@@ -9,5 +9,7 @@ python3
 pip install -r requirements.txt
 
 # HTTP proxy for grin v5
-grin-wallet listen
+./grin-wallet listen
+
 python3 proxy4grin5.py
+
